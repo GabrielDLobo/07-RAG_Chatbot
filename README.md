@@ -1,5 +1,6 @@
 # 📄 Chat PythonGPT — RAG with PDFs using LangChain, Hugging Face and Groq
 
+---
 
 This project is a **Retrieval-Augmented Generation (RAG)** application that allows users to interact with PDF documents via chat. It uses LLMs hosted on Groq for response generation and Hugging Face embeddings for local semantic search. The interface is built with **Streamlit**, providing an intuitive and interactive experience.
 
@@ -59,7 +60,7 @@ Este projeto é uma aplicação de **RAG (Retrieval-Augmented Generation)** que 
 ---
 
 
-## 🧱 Estrutura do Projeto
+## 🧱 Project Structure
 
 ├── app.py               # Main Streamlit application ├── db/                  # ChromaDB persistence directory ├── .env                 # Groq API key file ├── README.md            # Project documentation
 
