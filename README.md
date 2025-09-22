@@ -2,6 +2,8 @@
 
 ---
 
+### English Version
+
 This project is a **Retrieval-Augmented Generation (RAG)** application that allows users to interact with PDF documents via chat. It uses LLMs hosted on Groq for response generation and Hugging Face embeddings for local semantic search. The interface is built with **Streamlit**, providing an intuitive and interactive experience.
 
 
