@@ -56,3 +56,12 @@ Você pode adicionar outros modelos disponíveis na Groq conforme necessário.
 ## 🛡️ Segurança
 - As chaves de API são gerenciadas via .env usando python-decouple.
 - Nenhum dado dos documentos é enviado para a Groq — apenas os trechos relevantes são usados para gerar respostas.
+
+---
+
+## Imagens do Projeto
+
+media\1.png
+media\2.png
+media\3.png
+media\4.png
