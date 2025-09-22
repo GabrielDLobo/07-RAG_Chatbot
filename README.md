@@ -61,7 +61,7 @@ Você pode adicionar outros modelos disponíveis na Groq conforme necessário.
 
 ## Imagens do Projeto
 
-media\1.png
-media\2.png
-media\3.png
-media\4.png
+![alt text](</media/1.png>)
+![alt text](</media/2.png>)
+![alt text](</media/3.png>)
+![alt text](</media/4.png>)
