@@ -2,9 +2,6 @@
 
 <div align="center">
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Python](https://img.shields.io/badge/python-3.9%2B-blue)
-![Status](https://img.shields.io/badge/status-active-success)
 
 A lightweight **Retrieval-Augmented Generation (RAG)** chatbot that lets users upload PDF files and chat with their content.
 
@@ -184,3 +181,15 @@ Contributions are welcome. Please read the documentation before opening pull req
 ## License
 
 This project is licensed under the MIT License.
+
+---
+
+## Project Images
+
+![Project image 1](docs/images/1.png)
+
+![Project image 2](docs/images/2.png)
+
+![Project image 3](docs/images/3.png)
+
+![Project image 4](docs/images/4.png)
