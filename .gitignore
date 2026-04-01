@@ -2,3 +2,29 @@
 env
 .venv
 venv
+
+# Build and documentation
+site/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Cache and temp
+__pycache__/
+*.py[cod]
+*\.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db
