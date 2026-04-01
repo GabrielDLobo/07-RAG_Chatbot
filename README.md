@@ -2,66 +2,112 @@
 
 <div align="center">
 
+Chatbot RAG em Streamlit para enviar PDFs e conversar com o conteúdo, usando LangChain, ChromaDB e Groq.
 
-A lightweight **Retrieval-Augmented Generation (RAG)** chatbot that lets users upload PDF files and chat with their content.
-
-[Documentation](#documentation) • [Quick Start](#quick-start) • [Features](#features) • [Tech Stack](#tech-stack) • [Contributing](#contributing)
+<p>
+	<a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/" target="_blank" rel="noopener noreferrer">Abrir documentação</a>
+	·
+	<a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/" target="_blank" rel="noopener noreferrer">Mapa da documentação</a>
+	·
+	<a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/getting-started/" target="_blank" rel="noopener noreferrer">Primeiros passos</a>
+</p>
 
 </div>
 
 ---
 
-## Overview
+## Documentação / Documentation
 
-RAG Chatbot is a Streamlit-based application for chatting with PDF documents. It uses LangChain for retrieval, ChromaDB for vector storage, Hugging Face embeddings for semantic search, and Groq for LLM responses.
+A documentação completa do projeto está publicada em um site separado e abre fora do GitHub:
 
-The project is documented with MkDocs Material and the documentation site is the main entry point for setup, development, deployment, and technical references.
+<a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/" target="_blank" rel="noopener noreferrer">https://gabrieldlobo.github.io/07-RAG_Chatbot/</a>
 
----
+### Mapa da documentação / Documentation map
 
-## Documentation
+| Seção | Link | Descrição |
+|-------|------|-----------|
+| Overview | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/" target="_blank" rel="noopener noreferrer">Abrir</a> | Visão geral do projeto e atalhos úteis |
+| Getting Started | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/getting-started/" target="_blank" rel="noopener noreferrer">Abrir</a> | Pré-requisitos, instalação e execução |
+| Configuration | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/configuration/" target="_blank" rel="noopener noreferrer">Abrir</a> | Variáveis de ambiente e ajustes |
+| Project Structure | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/project-structure/" target="_blank" rel="noopener noreferrer">Abrir</a> | Organização do repositório |
+| Guidelines | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/guidelines/" target="_blank" rel="noopener noreferrer">Abrir</a> | Padrões de código e documentação |
+| Development | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/development/" target="_blank" rel="noopener noreferrer">Abrir</a> | Fluxo de desenvolvimento |
+| Testing | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/testing/" target="_blank" rel="noopener noreferrer">Abrir</a> | Estratégia e comandos de teste |
+| API Endpoints | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/api-endpoints/" target="_blank" rel="noopener noreferrer">Abrir</a> | Referência técnica da API |
+| System Modeling | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/system-modeling/" target="_blank" rel="noopener noreferrer">Abrir</a> | Arquitetura e fluxo de dados |
+| Authentication & Security | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/authentication-security/" target="_blank" rel="noopener noreferrer">Abrir</a> | Boas práticas e segurança |
+| Deployment | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/deployment/" target="_blank" rel="noopener noreferrer">Abrir</a> | Publicação e deploy |
+| Contributing | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/contributing/" target="_blank" rel="noopener noreferrer">Abrir</a> | Como contribuir |
+| Release Notes | <a href="https://gabrieldlobo.github.io/07-RAG_Chatbot/release-notes/" target="_blank" rel="noopener noreferrer">Abrir</a> | Histórico de versões |
 
-The full documentation is available here:
-
-**[Open the documentation site](https://gabrieldlobo.github.io/07-RAG_Chatbot/)**
-
-### Documentation Map
-
-| Section | Purpose |
-|---------|---------|
-| [Getting Started](docs/getting-started.md) | Overview, prerequisites, and installation |
-| [Configuration](docs/configuration.md) | Environment variables and app settings |
-| [Project Structure](docs/project-structure.md) | Repository and folder layout |
-| [Guidelines](docs/guidelines.md) | Code style and contribution standards |
-| [Development](docs/development.md) | Development workflow and tooling |
-| [Testing](docs/testing.md) | Test strategy and commands |
-| [API Endpoints](docs/api-endpoints.md) | API usage and reference |
-| [System Modeling](docs/system-modeling.md) | Architecture and data flow |
-| [Authentication & Security](docs/authentication-security.md) | Security notes and best practices |
-| [Deployment](docs/deployment.md) | Deployment instructions |
-| [Contributing](docs/contributing.md) | Contribution workflow |
-| [Release Notes](docs/release-notes.md) | Version history and changelog |
-
-### Local Documentation Preview
+### Pré-visualização local / Local preview
 
 ```bash
 pip install -r requirements_dev.txt
 mkdocs serve -a 127.0.0.1:8001
 ```
 
-Open [http://127.0.0.1:8001](http://127.0.0.1:8001) in your browser.
+Abra <a href="http://127.0.0.1:8001/" target="_blank" rel="noopener noreferrer">http://127.0.0.1:8001/</a> no navegador.
 
 ---
 
-## Quick Start
+## Visão geral / Overview
 
-### Prerequisites
+O projeto permite fazer upload de arquivos PDF e conversar com o conteúdo em linguagem natural. O fluxo principal usa ChromaDB para persistência vetorial, LangChain para orquestração, embeddings do Hugging Face para busca semântica e Groq para geração de respostas.
 
-- Python 3.9 or newer
-- A Groq API key
+---
+
+## Recursos / Features
+
+- Upload de um ou mais arquivos PDF
+- Quebra automática em chunks para indexação
+- Busca semântica com histórico de conversa
+- Respostas geradas por LLM com Groq
+- Persistência local em `db/`
+- Interface leve com Streamlit
+
+---
+
+## Tecnologias / Tech Stack
+
+| Camada | Tecnologia |
+|--------|------------|
+| UI | Streamlit |
+| Orquestração RAG | LangChain |
+| Banco vetorial | ChromaDB |
+| Embeddings | Hugging Face |
+| LLM | Groq |
+| Parsing de PDF | pypdf |
+| Configuração | python-dotenv e python-decouple |
+
+---
+
+## Estrutura do projeto / Project structure
+
+```text
+.
+├── app.py
+├── db/
+├── docs/
+├── media/
+├── mkdocs.yml
+├── pyproject.toml
+├── requirements.txt
+├── requirements_dev.txt
+└── README.md
+```
+
+---
+
+## Primeiros passos / Getting started
+
+### Pré-requisitos / Prerequisites
+
+- Python 3.11 ou superior
 - Git
+- Uma chave válida da Groq
 
-### Installation
+### Execução local / Local run
 
 ```bash
 git clone https://github.com/GabrielDLobo/07-RAG_Chatbot.git
@@ -69,127 +115,38 @@ cd 07-RAG_Chatbot
 python -m venv venv
 ```
 
-Activate the virtual environment:
+Ative o ambiente virtual:
 
 - Windows: `venv\Scripts\activate`
 - macOS/Linux: `source venv/bin/activate`
 
-Install the dependencies:
+Instale as dependências e execute a aplicação:
 
 ```bash
 pip install -r requirements.txt
+streamlit run app.py
 ```
 
-Create a `.env` file in the project root:
+Crie um arquivo `.env` na raiz do projeto com a chave da Groq:
 
 ```bash
 GROQ_API_KEY=your-groq-api-key-here
 ```
 
-Run the app:
+---
+
+## Desenvolvimento / Development
 
 ```bash
-streamlit run app.py
-```
-
----
-
-## Features
-
-- Upload one or multiple PDF files
-- Automatic document chunking and embedding
-- Semantic retrieval with ChromaDB
-- Conversational question answering with chat history
-- Groq-powered LLM responses
-- Local persistence in the `db/` directory
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| UI | Streamlit |
-| RAG Orchestration | LangChain |
-| Vector Database | ChromaDB |
-| Embeddings | Hugging Face |
-| LLM Provider | Groq |
-| PDF Parsing | PyPDF |
-| Configuration | python-dotenv |
-
----
-
-## Project Structure
-
-```text
-.
-├── app.py
-├── docs/
-├── db/
-├── media/
-├── requirements.txt
-├── requirements_dev.txt
-├── mkdocs.yml
-├── pyproject.toml
-└── README.md
-```
-
----
-
-## Development
-
-Format and lint the code with the tools configured in `pyproject.toml`:
-
-```bash
+pip install -r requirements_dev.txt
 black .
 isort .
 flake8
-```
-
-Run tests with:
-
-```bash
 pytest
 ```
 
 ---
 
-## Deployment
+## Licença / License
 
-The documentation site is configured with MkDocs Material and can be published with:
-
-```bash
-mkdocs gh-deploy --clean
-```
-
-For the app itself, use the deployment workflow described in the documentation.
-
----
-
-## Contributing
-
-Contributions are welcome. Please read the documentation before opening pull requests so changes stay aligned with the project structure and workflow.
-
-1. Fork the repository
-2. Create a branch
-3. Implement and test your changes
-4. Update documentation when needed
-5. Open a pull request
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
----
-
-## Project Images
-
-![Project image 1](docs/images/1.png)
-
-![Project image 2](docs/images/2.png)
-
-![Project image 3](docs/images/3.png)
-
-![Project image 4](docs/images/4.png)
+Este projeto está licenciado sob a MIT License.
