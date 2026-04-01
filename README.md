@@ -1,29 +1,124 @@
-# 07-RAG_Chatbot (PDF RAG Chat)
+# RAG Chatbot
 
-A minimal **Retrieval-Augmented Generation (RAG)** chatbot that lets you **upload PDF files** and **chat with their content**.
+<div align="center">
 
-The UI is built with **Streamlit**. PDFs are loaded with **PyPDFLoader**, split into chunks, embedded with **Hugging Face embeddings**, stored in **ChromaDB**, and queried using a **Groq-hosted LLM** via `langchain-groq`.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+![Status](https://img.shields.io/badge/status-active-success)
+
+A lightweight **Retrieval-Augmented Generation (RAG)** chatbot that lets users upload PDF files and chat with their content.
+
+[Documentation](#documentation) • [Quick Start](#quick-start) • [Features](#features) • [Tech Stack](#tech-stack) • [Contributing](#contributing)
+
+</div>
+
+---
+
+## Overview
+
+RAG Chatbot is a Streamlit-based application for chatting with PDF documents. It uses LangChain for retrieval, ChromaDB for vector storage, Hugging Face embeddings for semantic search, and Groq for LLM responses.
+
+The project is documented with MkDocs Material and the documentation site is the main entry point for setup, development, deployment, and technical references.
+
+---
+
+## Documentation
+
+The full documentation is available here:
+
+**[Open the documentation site](https://gabrieldlobo.github.io/07-RAG_Chatbot/)**
+
+### Documentation Map
+
+| Section | Purpose |
+|---------|---------|
+| [Getting Started](docs/getting-started.md) | Overview, prerequisites, and installation |
+| [Configuration](docs/configuration.md) | Environment variables and app settings |
+| [Project Structure](docs/project-structure.md) | Repository and folder layout |
+| [Guidelines](docs/guidelines.md) | Code style and contribution standards |
+| [Development](docs/development.md) | Development workflow and tooling |
+| [Testing](docs/testing.md) | Test strategy and commands |
+| [API Endpoints](docs/api-endpoints.md) | API usage and reference |
+| [System Modeling](docs/system-modeling.md) | Architecture and data flow |
+| [Authentication & Security](docs/authentication-security.md) | Security notes and best practices |
+| [Deployment](docs/deployment.md) | Deployment instructions |
+| [Contributing](docs/contributing.md) | Contribution workflow |
+| [Release Notes](docs/release-notes.md) | Version history and changelog |
+
+### Local Documentation Preview
+
+```bash
+pip install -r requirements_dev.txt
+mkdocs serve -a 127.0.0.1:8001
+```
+
+Open [http://127.0.0.1:8001](http://127.0.0.1:8001) in your browser.
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.9 or newer
+- A Groq API key
+- Git
+
+### Installation
+
+```bash
+git clone https://github.com/GabrielDLobo/07-RAG_Chatbot.git
+cd 07-RAG_Chatbot
+python -m venv venv
+```
+
+Activate the virtual environment:
+
+- Windows: `venv\Scripts\activate`
+- macOS/Linux: `source venv/bin/activate`
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file in the project root:
+
+```bash
+GROQ_API_KEY=your-groq-api-key-here
+```
+
+Run the app:
+
+```bash
+streamlit run app.py
+```
 
 ---
 
 ## Features
 
-- Upload **one or multiple PDFs** (sidebar)
-- Automatic PDF loading and chunking
-- Vector search with **ChromaDB** (persisted locally in `db/`)
-- Chat with conversation history (Streamlit session state)
-- LLM inference using **Groq** (`ChatGroq`)
+- Upload one or multiple PDF files
+- Automatic document chunking and embedding
+- Semantic retrieval with ChromaDB
+- Conversational question answering with chat history
+- Groq-powered LLM responses
+- Local persistence in the `db/` directory
 
 ---
 
-## Tech Stack (high level)
+## Tech Stack
 
-- Python + Streamlit
-- LangChain (retrieval chain + prompt templates + text splitting)
-- ChromaDB (vector database)
-- Hugging Face embeddings (local embeddings)
-- Groq LLMs (via LangChain integration)
-- PyPDF (PDF parsing/loading)
+| Layer | Technology |
+|-------|------------|
+| UI | Streamlit |
+| RAG Orchestration | LangChain |
+| Vector Database | ChromaDB |
+| Embeddings | Hugging Face |
+| LLM Provider | Groq |
+| PDF Parsing | PyPDF |
+| Configuration | python-dotenv |
 
 ---
 
@@ -31,122 +126,61 @@ The UI is built with **Streamlit**. PDFs are loaded with **PyPDFLoader**, split 
 
 ```text
 .
-├── app.py                # Streamlit app (RAG pipeline)
-├── requirements.txt       # Python dependencies
-├── README.md              # This file
-├── db/                    # ChromaDB persistence directory (created/used at runtime)
-├── media/                 # Images used in README
-├── ayrfrier_manual.pdf    # Sample PDF
-└── laptop_manual.pdf      # Sample PDF
+├── app.py
+├── docs/
+├── db/
+├── media/
+├── requirements.txt
+├── requirements_dev.txt
+├── mkdocs.yml
+├── pyproject.toml
+└── README.md
 ```
 
 ---
 
-## How It Works (Pipeline)
+## Development
 
-### 1) Ingestion (upload PDFs)
-1. Each uploaded PDF is saved to a temporary file
-2. `PyPDFLoader` loads the PDF into LangChain Documents
-3. Text is chunked via `RecursiveCharacterTextSplitter` with:
-   - `chunk_size=1000`
-   - `chunk_overlap=400`
-4. Chunks are embedded with `HuggingFaceEmbeddings()`
-5. Vectors are stored in ChromaDB under the `db/` directory
-
-### 2) Q&A (ask a question)
-1. Your question is sent to a retrieval chain (`create_retrieval_chain`)
-2. Chroma retrieves the most relevant chunks
-3. Retrieved chunks are passed as `{context}` to the LLM prompt
-4. The answer is shown in the chat UI
-
----
-
-## Requirements
-
-- Python 3.8+ (recommended: 3.10+)
-- A **Groq API key**
-- Disk space for embeddings and ChromaDB persistence
-
----
-
-## Setup
-
-### 1) Clone the repository
+Format and lint the code with the tools configured in `pyproject.toml`:
 
 ```bash
-git clone https://github.com/GabrielDLobo/07-RAG_Chatbot.git
-cd 07-RAG_Chatbot
+black .
+isort .
+flake8
 ```
 
-### 2) Install dependencies
+Run tests with:
 
 ```bash
-pip install -r requirements.txt
-```
-
-### 3) Configure environment variables
-
-Create a `.env` file in the repository root:
-
-```env
-GROQ_API_KEY=your-groq-api-key-here
+pytest
 ```
 
 ---
 
-## Run Locally
+## Deployment
+
+The documentation site is configured with MkDocs Material and can be published with:
 
 ```bash
-streamlit run app.py
+mkdocs gh-deploy --clean
 ```
 
-Open: http://localhost:8501
+For the app itself, use the deployment workflow described in the documentation.
 
 ---
 
-## Usage
+## Contributing
 
-1. Open the app
-2. Upload one or more PDFs using the sidebar
-3. Wait until indexing is finished
-4. Select an LLM model in the sidebar
-5. Ask questions in the chat input
+Contributions are welcome. Please read the documentation before opening pull requests so changes stay aligned with the project structure and workflow.
 
----
-
-## Available Models (current UI)
-
-The app currently offers these options in the model dropdown:
-
-- `llama-3.3-70b-versatile`
-- `openai/gpt-oss-120b`
-
-These identifiers are passed into `ChatGroq(model=...)`.
+1. Fork the repository
+2. Create a branch
+3. Implement and test your changes
+4. Update documentation when needed
+5. Open a pull request
 
 ---
 
-## Notes / Limitations
+## License
 
-- **Groq is required** in the current codebase (the app uses `ChatGroq` directly).
-- UI text and the system prompt are currently in **Portuguese**.
-- The vector database persistence directory is fixed to `db/` in code.
-- To re-index from scratch, delete the `db/` folder.
-
----
-
-## Security
-
-- Never commit `.env`
-- Keep your API keys private
-
----
-
-## Project Images
-
-![alt text](</media/1.png>)
----
-![alt text](</media/2.png>)
----
-![alt text](</media/3.png>)
----
-![alt text](</media/4.png>)
+This project is licensed under the MIT License.
