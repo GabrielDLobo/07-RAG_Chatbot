@@ -13,10 +13,6 @@
       
       
       
-        <link rel="prev" href="../testing/">
-      
-      
-        <link rel="next" href="../contributing/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Deploy - RAG Chatbot Documentation</title>
+        <title>Deployment Guide - RAG Chatbot Documentation</title>
       
     
     
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploy
+              Deployment Guide
             
           </span>
         </div>
@@ -223,11 +219,51 @@
   
   
     <li class="md-nav__item">
-      <a href="../getting-started/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Getting Started
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prerequisites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prerequisites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
   </span>
   
 
@@ -400,30 +436,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Deploy
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../deploy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -432,569 +448,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#table-of-contents" class="md-nav__link">
-    <span class="md-ellipsis">
-      Table of Contents
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Overview
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Deployment Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deployment-architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Architecture
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deployment-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Requirements
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Local Deployment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Local Deployment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard-local-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Standard Local Deployment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#access-locally" class="md-nav__link">
-    <span class="md-ellipsis">
-      Access Locally
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cloud-deployment-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cloud Deployment Options
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cloud Deployment Options">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#comparison-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comparison Table
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Deployment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Docker Deployment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dockerfile" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dockerfile
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#docker-compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      Docker Compose
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-and-run-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build and Run Docker
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dockerignore" class="md-nav__link">
-    <span class="md-ellipsis">
-      .dockerignore
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#streamlit-cloud" class="md-nav__link">
-    <span class="md-ellipsis">
-      Streamlit Cloud
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Streamlit Cloud">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deployment-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deployment Steps
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Limitations
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workaround-for-vector-store" class="md-nav__link">
-    <span class="md-ellipsis">
-      Workaround for Vector Store
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#heroku-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Heroku Deployment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Heroku Deployment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#procfile" class="md-nav__link">
-    <span class="md-ellipsis">
-      Procfile
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#runtimetxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      runtime.txt
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#heroku-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      Heroku Setup
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#buildpacks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Buildpacks
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#apt-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      apt-packages
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aws-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      AWS Deployment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="AWS Deployment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ec2-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      EC2 Deployment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="EC2 Deployment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-launch-ec2-instance" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Launch EC2 Instance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-user-data-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. User Data Script
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-security-group-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Security Group Rules
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#elastic-beanstalk" class="md-nav__link">
-    <span class="md-ellipsis">
-      Elastic Beanstalk
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Elastic Beanstalk">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Create Configuration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-deploy" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Deploy
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#production-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Production Checklist
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Production Checklist">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pre-Deployment
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#security-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security Checklist
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#performance-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Performance Checklist
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#monitoring-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monitoring Checklist
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backup-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backup Checklist
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#environment-specific-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Environment-Specific Configuration
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Environment-Specific Configuration">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#development" class="md-nav__link">
-    <span class="md-ellipsis">
-      Development
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#production" class="md-nav__link">
-    <span class="md-ellipsis">
-      Production
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scaling-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scaling Considerations
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Scaling Considerations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#horizontal-scaling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Horizontal Scaling
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#vertical-scaling" class="md-nav__link">
-    <span class="md-ellipsis">
-      Vertical Scaling
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Troubleshooting Deployment
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting Deployment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#common-issues" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Issues
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#health-check-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      Health Check Endpoint
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      Log Access
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cost-estimates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Cost Estimates
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Cost Estimates">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#monthly-costs-by-platform" class="md-nav__link">
-    <span class="md-ellipsis">
-      Monthly Costs by Platform
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      Next Steps
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1006,11 +459,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../contributing/" class="md-nav__link">
+      <a href="../contribution/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Contribution
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image-projects/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Image Projects
   </span>
   
 
