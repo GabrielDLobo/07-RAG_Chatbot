@@ -13,20 +13,20 @@ theme:
   favicon: images/favicon.png
   palette:
     - scheme: default
-      primary: blue
-      accent: light blue
+      primary: teal
+      accent: cyan
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: blue
-      accent: light blue
+      primary: teal
+      accent: cyan
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
   font:
-    text: Roboto
-    code: Roboto Mono
+    text: Space Grotesk
+    code: JetBrains Mono
   icon:
     repo: fontawesome/brands/github
     admonition:

@@ -1,85 +1,129 @@
-# RAG Chatbot Documentation
+<div class="hero-shell">
 
-Welcome to the **RAG Chatbot** documentation. This guide provides comprehensive information about the project, from setup to deployment.
+<div class="hero-badge">RAG Chatbot Documentation</div>
 
----
+# RAG Chatbot
 
-## 📖 Table of Contents
+<p class="hero-lead">Documentação do projeto em um formato mais visual e navegável, com acesso rápido para setup, configuração, desenvolvimento e deployment.</p>
 
-| Section | Description |
-|---------|-------------|
-| [Getting Started](getting-started.md) | Overview, prerequisites, installation, and quick start guide |
-| [Configuration](configuration.md) | Environment variables and project configuration |
-| [Guidelines](guidelines.md) | Coding standards and best practices |
-| [Project Structure](project-structure.md) | Directory and file organization |
-| [API Endpoints](api-endpoints.md) | Available endpoints and usage |
-| [System Modeling](system-modeling.md) | Data models, architecture, and flow diagrams |
-| [Authentication & Security](authentication-security.md) | Security practices and authentication |
-| [Development](development.md) | Development workflow and guidelines |
-| [Testing](testing.md) | Testing strategies and procedures |
-| [Deployment](deployment.md) | Deployment instructions and options |
-| [Contributing](contributing.md) | How to contribute to the project |
-| [Release Notes](release-notes.md) | Version history and changelog |
+<div class="hero-actions">
+    <a class="md-button md-button--primary" href="getting-started/">Começar agora</a>
+    <a class="md-button" href="configuration/">Ver configuração</a>
+    <a class="md-button" href="https://github.com/GabrielDLobo/07-RAG_Chatbot" target="_blank" rel="noopener noreferrer">Repositório</a>
+</div>
 
----
+<div class="hero-metrics">
+    <div class="metric-card">
+        <span class="metric-label">Fluxo principal</span>
+        <strong>Upload de PDF + chat</strong>
+        <p>Leitura de documentos com respostas contextualizadas.</p>
+    </div>
+    <div class="metric-card">
+        <span class="metric-label">Stack</span>
+        <strong>Streamlit + LangChain</strong>
+        <p>Interface leve com orquestração RAG e Groq.</p>
+    </div>
+    <div class="metric-card">
+        <span class="metric-label">Persistência</span>
+        <strong>ChromaDB local</strong>
+        <p>Embeddings e vetores salvos em <code>db/</code>.</p>
+    </div>
+</div>
 
-## 🚀 Quick Start
+</div>
+
+## Visão geral
+
+O RAG Chatbot permite fazer upload de arquivos PDF e conversar com o conteúdo de forma natural. O pipeline usa LangChain para orquestração, ChromaDB para busca vetorial, Hugging Face para embeddings e Groq para gerar as respostas.
+
+## Acesso rápido
+
+<div class="doc-grid">
+    <a class="doc-card" href="getting-started/">
+        <span class="doc-card-eyebrow">01</span>
+        <h3>Getting Started</h3>
+        <p>Pré-requisitos, instalação e execução local.</p>
+    </a>
+    <a class="doc-card" href="configuration/">
+        <span class="doc-card-eyebrow">02</span>
+        <h3>Configuration</h3>
+        <p>Variáveis de ambiente, modelos e ajustes do app.</p>
+    </a>
+    <a class="doc-card" href="project-structure/">
+        <span class="doc-card-eyebrow">03</span>
+        <h3>Project Structure</h3>
+        <p>Organização dos arquivos e responsabilidades.</p>
+    </a>
+    <a class="doc-card" href="development/">
+        <span class="doc-card-eyebrow">04</span>
+        <h3>Development</h3>
+        <p>Fluxo de desenvolvimento e boas práticas locais.</p>
+    </a>
+    <a class="doc-card" href="testing/">
+        <span class="doc-card-eyebrow">05</span>
+        <h3>Testing</h3>
+        <p>Estratégia de testes e comandos de validação.</p>
+    </a>
+    <a class="doc-card" href="deployment/">
+        <span class="doc-card-eyebrow">06</span>
+        <h3>Deployment</h3>
+        <p>Publicação, ambiente e opções de deploy.</p>
+    </a>
+</div>
+
+## O que você encontra
+
+<div class="feature-grid">
+    <div class="feature-card">
+        <h3>Documentação modular</h3>
+        <p>Cada assunto está separado em páginas próprias, com navegação rápida entre setup, configuração, arquitetura e testes.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Experiência orientada ao uso</h3>
+        <p>O conteúdo foi reorganizado para funcionar como ponto de entrada principal do projeto, não apenas como referência técnica.</p>
+    </div>
+    <div class="feature-card">
+        <h3>Links externos para o site publicado</h3>
+        <p>Os atalhos principais apontam para a documentação hospedada em GitHub Pages, abrindo em nova aba quando necessário.</p>
+    </div>
+</div>
+
+## Começar localmente
 
 ```bash
-# Clone the repository
 git clone https://github.com/GabrielDLobo/07-RAG_Chatbot.git
 cd 07-RAG_Chatbot
-
-# Install dependencies
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
-
-# Configure environment
-echo "GROQ_API_KEY=your-api-key-here" > .env
-
-# Run the application
 streamlit run app.py
 ```
 
----
+## Estrutura resumida
 
-## 📌 What is RAG Chatbot?
+| Seção | Descrição |
+|-------|-----------|
+| Getting Started | Setup inicial, pré-requisitos e execução |
+| Configuration | Variáveis e comportamento do aplicativo |
+| Guidelines | Padrões de código e documentação |
+| Project Structure | Mapa do repositório |
+| API Endpoints | Interface técnica e uso interno |
+| System Modeling | Fluxo e arquitetura do sistema |
+| Authentication & Security | Regras de acesso e proteção |
+| Development | Rotina de desenvolvimento |
+| Testing | Validação e cobertura |
+| Deployment | Publicação em produção |
+| Contributing | Processo de contribuição |
+| Release Notes | Histórico de versões |
 
-**RAG (Retrieval-Augmented Generation) Chatbot** is a minimal chatbot application that allows you to:
-
-- **Upload PDF files** and automatically index their content
-- **Chat with document content** using natural language
-- **Get accurate answers** backed by retrieved context from your documents
-
-The application uses **LangChain** for RAG pipeline, **ChromaDB** for vector storage, **Hugging Face embeddings** for text embedding, and **Groq LLMs** for inference.
-
----
-
-## 🏗️ Architecture Overview
-
-```mermaid
-graph TB
-    User[User] --> Streamlit[Streamlit UI]
-    Streamlit --> LangChain[LangChain RAG Pipeline]
-    LangChain --> ChromaDB[(ChromaDB Vector Store)]
-    LangChain --> Groq[Groq LLM API]
-    PDF[PDF Files] --> PyPDF[PyPDF Loader]
-    PyPDF --> TextSplitter[Text Splitter]
-    TextSplitter --> Embeddings[HuggingFace Embeddings]
-    Embeddings --> ChromaDB
-```
-
----
-
-## 📸 Screenshots
+## Screenshots
 
 | Upload Interface | Chat Interface |
-|-----------------|----------------|
+|------------------|----------------|
 | ![Upload Interface](images/1.png) | ![Chat Interface 1](images/2.png) |
 | ![Chat Interface 2](images/3.png) | ![Chat Interface 3](images/4.png) |
 
----
-
-## 🔗 Links
+## Links úteis
 
 - [GitHub Repository](https://github.com/GabrielDLobo/07-RAG_Chatbot)
 - [LangChain Documentation](https://python.langchain.com/)
@@ -87,14 +131,6 @@ graph TB
 - [Groq API](https://console.groq.com/)
 - [ChromaDB Documentation](https://docs.trychroma.com/)
 
----
+## Suporte
 
-## 📄 License
-
-This project is open source. See the repository for license information.
-
----
-
-## 🤝 Support
-
-For issues, questions, or contributions, please visit the [GitHub repository](https://github.com/GabrielDLobo/07-RAG_Chatbot).
+Para dúvidas, problemas ou sugestões, consulte o repositório do projeto.
