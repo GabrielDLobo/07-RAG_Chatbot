@@ -5,7 +5,9 @@ Welcome to the **RAG Chatbot** documentation. This guide provides comprehensive 
 ## 📚 Documentation Index
 
 ### Getting Started
-- [**Getting Started**](getting-started.md) - Project overview, prerequisites, installation, and quick start
+- [**Overview**](overview.md) - Project overview and key features
+- [**Prerequisites**](prerequisites.md) - Requirements before installation
+- [**Installation**](installation.md) - Step-by-step installation guide
 - [**Configuration**](configuration.md) - Environment variables and application settings
 
 ### Development
@@ -20,8 +22,8 @@ Welcome to the **RAG Chatbot** documentation. This guide provides comprehensive 
 - [**Authentication & Security**](authentication-security.md) - Security implementation and recommendations
 
 ### Deployment & Contribution
-- [**Deploy**](deployment.md) - Deployment instructions
-- [**Contribution**](contributing.md) - How to contribute
+- [**Deploy**](deploy.md) - Deployment instructions
+- [**Contribution**](contribution.md) - How to contribute
 - [**Release Notes**](release-notes.md) - Version history and changelog
 
 ---
@@ -105,7 +107,7 @@ graph TB
 
 ## 📞 Support
 
-For issues, questions, or contributions, please refer to the [Contribution Guide](contributing.md).
+For issues, questions, or contributions, please refer to the [Contribution Guide](contribution.md).
 
 ---
 
